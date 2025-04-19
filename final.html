@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفرق بين المواقع البسيطة والمتغيرة</title>
+    <style>
+        :root {
+            --main-color: #2c3e50;
+            --second-color: #3498db;
+            --light-color: #ecf0f1;
+            --accent-color: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--main-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--main-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 2rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--main-color);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--second-color);
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            color: var(--second-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-title i {
+            margin-left: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background-color: var(--second-color);
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li:before {
+            content: '•';
+            color: var(--second-color);
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .tutorial-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+            display: block;
+            border: 1px solid #ddd;
+        }
+
+        /* روابط التواصل */
+        .social-links {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 18px;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+        }
+
+        .facebook { background-color: #3b5998; }
+        .twitter { background-color: #1DA1F2; }
+        .instagram { background-color: #E1306C; }
+        .whatsapp { background-color: #25D366; }
+        .linkedin { background-color: #0077B5; }
+
+        /* تذييل الصفحة */
+        footer {
+            background-color: var(--main-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 1rem;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--second-color);
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-links {
+                position: static;
+                flex-direction: row;
+                justify-content: center;
+                transform: none;
+                margin: 1rem 0;
+                left: auto;
+                top: auto;
+            }
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- روابط التواصل العائمة -->
+    <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=100070617385397" class="social-link facebook" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/abdohigh?igsh=MWVsY2xnYTlibzZjNg==" class="social-link instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/+212766981152" class="social-link whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/abdelilah-el-baroudi-364b10349?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link linkedin" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>الفرق بين المواقع البسيطة والمتغيرة</h1>
+            <p>شرح مبسط لأنواع مواقع الويب وكيفية عملها</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2 class="section-title">مقدمة</h2>
+            <div class="card">
+                <p>يوجد نوعان رئيسيان لمواقع الويب:</p>
+                <ul class="feature-list">
+                    <li><strong>المواقع البسيطة:</strong> صفحات ثابتة لا تتغير محتوياتها إلا بتعديل الكود</li>
+                    <li><strong>المواقع المتغيرة:</strong> صفحات يمكن أن يتغير محتواها تلقائياً حسب المستخدم أو البيانات</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">مقارنة بين النوعين</h2>
+            <div class="card">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>نقطة المقارنة</th>
+                            <th>المواقع البسيطة</th>
+                            <th>المواقع المتغيرة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>طريقة العمل</td>
+                            <td>تعمل بثلاث لغات فقط (HTML, CSS, JS)</td>
+                            <td>تتطلب لغات إضافية للتعامل مع البيانات</td>
+                        </tr>
+                        <tr>
+                            <td>المحتوى</td>
+                            <td>ثابت لا يتغير</td>
+                            <td>يتغير حسب المستخدم أو البيانات</td>
+                        </tr>
+                        <tr>
+                            <td>السرعة</td>
+                            <td>أسرع في التحميل</td>
+                            <td>أبطأ قليلاً</td>
+                        </tr>
+                        <tr>
+                            <td>التكلفة</td>
+                            <td>أقل تكلفة</td>
+                            <td>أعلى تكلفة</td>
+                        </tr>
+                        <tr>
+                            <td>التحديث</td>
+                            <td>يتطلب تعديل الكود</td>
+                            <td>يمكن التحديث من لوحة تحكم</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">مكونات الموقع البسيط</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-code"></i> HTML</h3>
+                    <p>لغة بناء هيكل الصفحة وعناصرها الأساسية:</p>
+                    <ul class="feature-list">
+                        <li>العناوين والنصوص</li>
+                        <li>الصور والروابط</li>
+                        <li>الجداول والقوائم</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-paint-brush"></i> CSS</h3>
+                    <p>لغة تحسين مظهر الصفحة وتنسيقها:</p>
+                    <ul class="feature-list">
+                        <li>الألوان والخطوط</li>
+                        <li>التنسيق والمسافات</li>
+                        <li>التكيف مع الشاشات المختلفة</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-cogs"></i> JavaScript</h3>
+                    <p>لغة إضافة الحركة والتفاعل:</p>
+                    <ul class="feature-list">
+                        <li>الاستجابة لنقرات المستخدم</li>
+                        <li>تغيير المحتوى ديناميكياً</li>
+                        <li>التأثيرات المتحركة</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">كيفية تشغيل المواقع البسيطة على الهاتف</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-mobile-alt"></i> الخطوة الأولى: تحميل التطبيق</h3>
+                    <p>قم بتحميل برنامج WebCode لإنشاء وتحرير مواقع الويب على الهاتف:</p>
+                    <img src="./a.jpg" alt="واجهة تطبيق WebCode" class="tutorial-img">
+                    <p>كما ترون هنا يمكننا فتح مشاريع تم إنشاؤها سابقاً، لكننا سنركز على إنشاء مشروع جديد من البداية. أما بالنسبة للحواسيب، فيمكنك استخدام برنامج Visual Studio Code وهو من أفضل البرامج للمطورين.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.qamar.ide.web" class="btn" target="_blank">
+                        <i class="fas fa-download"></i> تحميل تطبيق WebCode
+                    </a>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-file-code"></i> الخطوة الثانية: إنشاء ملف HTML</h3>
+                    <p>اختر نوع الملف الذي تريد إنشاءه (HTML, CSS, JavaScript):</p>
+                    <img src="b.jpg" alt="إنشاء ملف جديد" class="tutorial-img">
+                    <p>في هذه الصفحة يمكننا إنشاء ملف HTML الذي يحتوي على هيكل الصفحة باستخدام العلامات (&lt;&gt;). يمكنك وضع كل الكود (HTML, CSS, JavaScript) في ملف واحد لتبسيط العمل للمبتدئين، حيث تضيف التنسيقات داخل &lt;style&gt; والأكواد البرمجية داخل &lt;script&gt;.</p>
+                    <a href="https://code.visualstudio.com/download" class="btn" target="_blank">
+                        <i class="fas fa-download"></i> تحميل VS Code للحواسيب
+                    </a>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-graduation-cap"></i> الخطوة الثالثة: مصادر التعلم</h3>
+                    <p>أفضل مصادر لتعلم تطوير المواقع البسيطة:</p>
+                    <ul class="feature-list">
+                        <li>موقع W3Schools (أشهر موقع لتعلم البرمجة): <a href="https://www.w3schools.com/" target="_blank">اضغط هنا لزيارة الموقع</a></li>
+                        <li>قناة Coder Shiyar على اليوتيوب: <a href="https://m.youtube.com/@CoderShiyar" target="_blank">انقر هنا للزيارة</a></li>
+                        <li>دورات مجانية على موقع freeCodeCamp: <a href="https://www.freecodecamp.org/" target="_blank">زيارة الموقع</a></li>
+                    </ul>
+                    <p>بعد التعلم يمكنك البدء بإنشاء مواقع ويب احترافية. إذا كنت مهتماً أكثر، يمكنك الانتقال لاحقاً إلى تطوير المواقع المتغيرة. ننصح باستخدام الذكاء الاصطناعي للمساعدة في التطوير، حيث يمكنك طلب إنشاء موقع كامل ثم تعديله حسب احتياجاتك.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>شرح مبسط لأنواع مواقع الويب &copy; <span id="current-year">2023</span></p>
+            <div class="footer-links">
+                <a href="https://www.facebook.com/profile.php?id=100070617385397" class="footer-link" target="_blank">
+                    <i class="fab fa-facebook"></i> فيسبوك
+                </a>
+                <a href="https://www.instagram.com/abdohigh?igsh=MWVsY2xnYTlibzZjNg==" class="footer-link" target="_blank">
+                    <i class="fab fa-instagram"></i> إنستغرام
+                </a>
+                <a href="https://wa.me/+212766981152" class="footer-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i> واتساب
+                </a>
+                <a href="https://www.linkedin.com/in/abdelilah-el-baroudi-364b10349?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="footer-link" target="_blank">
+                    <i class="fab fa-linkedin"></i> لينكد إن
+                </a>
+            </div>
+            <p>للتواصل أو الاستفسارات، لا تتردد في مراسلتنا على أي من المنصات أعلاه</p>
+        </div>
+    </footer>
+
+    <script>
+        // تحديث السنة تلقائياً
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // إضافة تأثير سلس للروابط
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
